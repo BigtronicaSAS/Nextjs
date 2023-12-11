@@ -1,6 +1,10 @@
 'use client'
+import {
+  SiJavascript,
+  SiCplusplus
+} from "react-icons/si";
 import React, { useState } from "react";
-import Sintax from "@/SyntaxCode/SyntaxCode";
+import Syntax from "@/SyntaxCode/SyntaxCode";
 import styles from "./page.module.css";
 import { AboutJs, AboutC } from "@/SyntaxCode/Code"
 
@@ -12,35 +16,29 @@ export default function Home() {
   };
 
   return (
-    <div className={`relative h-[400px] w-[900px] bg-[#2f2e2e] text-white rounded-3xl p-[20px] text-xl overflow-y-auto ${styles.container}`}>
-      <div className="relative overflow-y-auto">
-        <div className="mb-4 absolute top-0 right-0 p-[20px]">
-          <button
-            className={`mr-2 ${selectedLanguage === 'javascript' ? 'bg-blue-500' : 'bg-gray-300'}`}
-            onClick={() => toggleLanguage('javascript')}
-          >
-            JS
-          </button>
-          <button
-            className={`mr-2 ${selectedLanguage === 'c++' ? 'bg-blue-500' : 'bg-gray-300'}`}
-            onClick={() => toggleLanguage('c++')}
-          >
-            C++
-          </button>
-        </div>
-        {selectedLanguage === 'javascript' && <Sintax code={AboutJs} language="javascript" />}
-        {selectedLanguage === 'c++' && <Sintax code={AboutC} language="c++" />}
+    <div className={`relative h-[400px] w-[900px] bg-[#2f2e2e] text-white rounded-3xl p-[20px] text-xl ${styles.container}`}>
+      <div className=" flex gap-2 mb-4 absolute top-0 right-0 p-[40px] z-10">
 
+        <SiJavascript className={`text-5xl cursor-pointer ${selectedLanguage === 'javascript' ? 'text-yellow-500' : 'text-gray-500'}`}
+          onClick={() => toggleLanguage('javascript')} />
+
+        <SiCplusplus className={`text-5xl cursor-pointer ${selectedLanguage === 'c++' ? 'text-blue-500' : 'text-gray-500'}`}
+          onClick={() => toggleLanguage('c++')} />
+
+      </div>
+      <div className={`relative overflow-y-auto scroll-smooth ${styles.Syntax}`}>
+        {selectedLanguage === 'javascript' && <Syntax code={AboutJs} language="javascript" />}
+        {selectedLanguage === 'c++' && <Syntax code={AboutC} language="c++" />}
       </div>
 
       <div className="flex p-[20px] justify-between items-center">
-        <div className="count">
-         <p>Aqui va un contador</p>
+        <div className="">
+          <p>otra frase</p>
         </div>
         <div className="textcontainer">
           <p>Aqui va un texto</p>
         </div>
-        
+
       </div>
 
     </div>

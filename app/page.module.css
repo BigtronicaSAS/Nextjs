@@ -2,4 +2,22 @@
     display: grid;
     grid-template-rows: 3fr 1fr;
     grid-template-columns: 100%;
-  }
+}
+
+.Syntax::-webkit-scrollbar {
+    width: 0;
+}
+.Syntax:hover::-webkit-scrollbar {
+    width: 3px;
+    height: 100%;
+}
+
+.Syntax::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.403);
+    border-radius: 100vw;
+}
+
+.Syntax::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.262);
+    border-radius: 100vw;
+}
