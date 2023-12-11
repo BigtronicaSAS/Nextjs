@@ -28,7 +28,7 @@ export default function Home() {
       </div>
       <div className={`relative overflow-y-auto scroll-smooth ${styles.Syntax}`}>
         {selectedLanguage === 'javascript' && <Syntax code={AboutJs} language="javascript" />}
-        {selectedLanguage === 'c++' && <Syntax code={AboutC} language="c++" />}
+        {selectedLanguage === 'c++' && <Syntax code={AboutC} language="arduino" />}
       </div>
 
       <div className="flex p-[20px] justify-between items-center">
